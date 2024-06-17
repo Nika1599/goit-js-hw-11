@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Image Search App</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section>
-      <h1></h1>
-      <!-- <img src="./img/javascript.svg" alt="" /> -->
-    </section>
-    <section>
-      <input type="text" id="" class="" />
-      <button type="submit" data-start>Search</button>
-    </section>
-
+    <form class="js-picture-form form-inline">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          name="query"
+          placeholder="Search images ..."
+        />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+    <div id="gallery"></div>
     <script type="module" src="./main.js"></script>
   </body>
+  <div class="loader-wrapper">
+    <span class="loader"></span>
+  </div>
 </html>
