@@ -3,6 +3,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+let lightbox;
+
 export function renderGallery(images) {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = images
@@ -18,7 +20,13 @@ export function renderGallery(images) {
     )
     .join('');
 
-  lightbox.refresh();
+  if (!lightbox) {
+    lightbox = new SimpleLightbox('.gallery a', {
+      /* options */
+    });
+  } else {
+    lightbox.refresh();
+  }
 }
 
 export function showError(message) {
@@ -26,4 +34,9 @@ export function showError(message) {
     title: 'Error',
     message: message,
   });
+}
+
+export function clearGallery() {
+  const gallery = document.getElementById('gallery');
+  gallery.innerHTML = '';
 }

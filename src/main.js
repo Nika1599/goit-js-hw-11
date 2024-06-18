@@ -1,5 +1,5 @@
 import { fetchImages } from './js/pixabay-api';
-import { renderGallery, showError } from './js/render-functions';
+import { renderGallery, showError, clearGallery } from './js/render-functions';
 
 const loaderWrapper = document.querySelector('.loader-wrapper');
 
@@ -17,6 +17,8 @@ refs.form.addEventListener('submit', function (e) {
     showError('Please enter a search term');
     return;
   }
+  clearGallery();
+
   loaderWrapper.style.display = 'block';
 
   fetchImages(query)

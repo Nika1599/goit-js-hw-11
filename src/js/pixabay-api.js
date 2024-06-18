@@ -20,5 +20,6 @@ export function fetchImages(query) {
     })
     .catch(error => {
       console.error('Error fetching images:', error);
+      throw error;
     });
 }
